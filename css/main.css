@@ -33,52 +33,38 @@ body {
   text-align: center;
 }
 
-.BarBottem {
-  
-  position: fixed;
-  left: 0%;
-  bottom: -2.5%;
-  background-color: #161616e0 ;
-  color: white;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  /* font-size:125%; */
- /* height: 5%; */
+.navBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
-  width: 98.5%;
-  padding: 15px;
-/*  
-
-  border-top-left-radius: 25px;
-
-  border-top-right-radius: 25px; */
-  box-shadow: -7px -7px 10px rgba(63, 63, 63, 0.701);
+  background-color: #333;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top-left-radius: 15px;
+  
+  border-top-right-radius: 15px;
 }
 
-.BarBottem li {
- margin: 2px;
+.navBar li {
+  float: left;
+}
+
+.navBar li a {
+  display: block;
+  color: white;
   text-align: center;
-  /* width: 5%; */
-  padding: 15px;
-  display: inline;
-  /* justify-content: center; */
-  height: 100%;
-  padding: 3px;
-
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-.BarBottem li a{
-  /* padding: 10px; */
-  border-radius: 50px;
-  border: transparent 1px dotted;
-
+.navBar li a:hover:not(.active) {
+  background-color: #111;
 }
 
-li.selected {
-
-  color: green;
-
+.navBar .active {
+  background-color: #04AA6D;
 }
 .btn{
   /* text-align: center; */
