@@ -6,7 +6,7 @@ function SetPage(page, ele) {
   for (let i = 0; i < collection.length; i++) {
     var tEle = collection[i].children[0]
     var TEMPVar = tEle.className
-    console.log(tEle)
+    // console.log(tEle)
     // if (TEMPVar.includes("active")) {
     tEle.className = tEle.className.replaceAll("active", '')
     //   console.log(tEle.className)
