@@ -1,1 +1,1 @@
-alert(new Date())
+// alert(new Date())
