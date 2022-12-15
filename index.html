@@ -9,23 +9,35 @@
     <link rel="stylesheet" href="css/main.css">
     <script defer src="js/main.js"></script>
     <script defer src="js/dialogs.js"></script>
-    <style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script>
 
+        /* Add "https://api.ipify.org?format=json" statement
+                   this will communicate with the ipify servers in
+                   order to retrieve the IP address $.getJSON will
+                   load JSON-encoded data from the server using a
+                   GET HTTP request */
 
+        $.getJSON("https://api.ipify.org?format=json", function (data) {
 
-    </style>
+            // Setting text of element P with id gfg
+            $("#gfg").html(data.ip);
+        })
+    </script>
 </head>
 
 <body>
 
-    <h4>Welcome Sir</h4>
+    <h4>Welcome Sir  <br> <p id="gfg"></p>
+         </h4>
     <!-- <div id="MainContainer"> -->
-        <!-- <div class="btn selected">
+    <!-- <div class="btn selected">
             <h4>Welcome</h4>
         </div> -->
 
 
-        <!-- <ul class="BarBottem">
+    <!-- <ul class="BarBottem">
 
             <li class="selected" onClick="SetPage('home',this)"><a>Home</a></li>    
             <li onClick="SetPage('spotify',this)"><a>Spotify</a></a></li>
@@ -35,12 +47,12 @@
         </ul> -->
 
 
-        <ul class="navBar">
-            <li><a class="active" href="#home" onClick="SetPage('home',this)">Home</a></li>
-            <li><a href="#news" onClick="SetPage('News',this)">News</a></li>
-            <li><a href="#contact" onClick="SetPage('Contact',this)">Contact</a></li>
-            <li  style="float:right;"><a href="#about" onClick="SetPage('Settings',this)">Settings</a></li>
-          </ul>
+    <ul class="navBar">
+        <li><a class="active" href="#home" onClick="SetPage('home',this)">Home</a></li>
+        <li><a href="#news" onClick="SetPage('News',this)">News</a></li>
+        <li><a href="#contact" onClick="SetPage('Contact',this)">Contact</a></li>
+        <li style="float:right;"><a href="#about" onClick="SetPage('Settings',this)">Settings</a></li>
+    </ul>
 
     <!-- </div> -->
 </body>
