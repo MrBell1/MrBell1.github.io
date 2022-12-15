@@ -9,26 +9,69 @@
     <link rel="stylesheet" href="css/main.css">
     <script defer src="js/main.js"></script>
     <script defer src="js/dialogs.js"></script>
+    <style>
 
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+    </style>
 </head>
 
 <body>
 
-    <div id="MainContainer">
+    <!-- <div id="MainContainer"> -->
         <div class="btn selected">
             <h4>Welcome</h4>
         </div>
 
 
-        <ul class="BarBottem">
+        <!-- <ul class="BarBottem">
 
             <li class="selected" onClick="SetPage('home',this)"><a>Home</a></li>
-            <!-- <li onClick="SetPage('spotify',this)"><a>Spotify</a></a></li>
+            <li onClick="SetPage('spotify',this)"><a>Spotify</a></a></li>
         <li onClick="SetPage('tuya',this)"><a>Tuya</a></a></li>
-      <li onClick="SetPage('settings',this)"><a>Settings</a></a></li> -->
+      <li onClick="SetPage('settings',this)"><a>Settings</a></a></li>
 
-        </ul>
-    </div>
+        </ul> -->
+
+
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+
+    <!-- </div> -->
 </body>
 
 </html>

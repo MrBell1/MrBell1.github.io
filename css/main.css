@@ -37,22 +37,22 @@ body {
   
   position: fixed;
   left: 0%;
-  bottom: -2%;
+  bottom: -2.5%;
   background-color: #161616e0 ;
   color: white;
   align-items: center;
   display: flex;
   justify-content: center;
-  font-size:125%;
+  /* font-size:125%; */
  /* height: 5%; */
   overflow: hidden;
-  width: 99%;
-  padding: 10px;
- 
+  width: 98.5%;
+  padding: 15px;
+/*  
 
   border-top-left-radius: 25px;
 
-  border-top-right-radius: 25px;
+  border-top-right-radius: 25px; */
   box-shadow: -7px -7px 10px rgba(63, 63, 63, 0.701);
 }
 
