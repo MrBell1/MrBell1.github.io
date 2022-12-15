@@ -104,19 +104,39 @@ html{
 
 
 }
-
-.pageHolder .CurrentPage{
+.pageHolder{
+  background-color: transparent;
+  width: 100%;
   font-size: 125%;
+  height: 97.5%;
+}
+.pageHolder .CurrentPage{
+
+
   /* position: relative;
   top: 0;
-  width: 100%;
+
   text-align: center; */
 display: block;
-  /* height:95%;
+
+
+/* height:95%;
   padding: 5px;
   border-radius: 15px;
   background-color: #3b3b3b; */
 
+}
+.Date{
+  text-align: center;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: x-large;
+  background-color: #111;
+  padding:5px;
+  padding-right: 7.5px;
+  border-bottom-right-radius: 15px;
 }
 .Clock {
   text-align: center;

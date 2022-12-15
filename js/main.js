@@ -22,6 +22,8 @@ function currentTime() {
   let time = hh + ":" + mm + ":" + ss + " " + session;
 
    document.getElementsByClassName("Clock")[0].innerText = time; 
+   document.getElementsByClassName("Date")[0].innerText = date.toDateString();
+   
   let t = setTimeout(function(){ currentTime() }, (0.5*1000));
 }
 currentTime();
