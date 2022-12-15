@@ -1,10 +1,13 @@
 *{
 
     background-color: rgb(53, 53, 53);
-  
+    text-align: center;
   }
-  #mainBtn{
-
-    
-
+  .mainBtn{
+    border: 1px transparent solid;
+    /* border-radius:25%; */
+    text-align: center;
+    width: 5%;
+    aspect-ratio: 16/9;
+    background-color:  rgb(135, 135, 135);;
   }
