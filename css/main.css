@@ -3,20 +3,13 @@ body {
   display: flex;
   justify-content: center;
   font-family: fantasy;
-
-  /* color: white; */
-
-  /* background-color: #afd275; */
   
   height: 94.5vh;
-
-
-
 }
 html{
   align-items: center;
   overflow: hidden;
-
+ 
   background-color: #2a2a2a;
   color: white;
 }
@@ -113,6 +106,7 @@ html{
 }
 
 .pageHolder .CurrentPage{
+  font-size: 125%;
   /* position: relative;
   top: 0;
   width: 100%;
