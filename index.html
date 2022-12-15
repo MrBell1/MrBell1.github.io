@@ -27,9 +27,24 @@
 </head>
 
 <body>
-
-    <h4>Welcome Sir  <br> <p id="gfg"></p>
-         </h4>
+    <div class="pageHolder">
+        <div id='homePage' class="CurrentPage">
+            <h4>Welcome Sir<br>
+                <p id="gfg">
+                    Home
+                </p>
+                 
+            </h4> 
+        </div>
+        <div id='SettingsPage' class="">
+            <h4>Welcome Sir<br>
+                <p id="gfg">
+                    Settings
+                </p>
+                 
+            </h4> 
+        </div>
+    </div>
     <!-- <div id="MainContainer"> -->
     <!-- <div class="btn selected">
             <h4>Welcome</h4>
@@ -45,12 +60,12 @@
 
         </ul> -->
 
-
+<div class="Clock">6:40 AM</div>
     <ul class="navBar">
-        <li><a class="active" href="#home" onClick="SetPage('home',this)">Home</a></li>
-        <li><a href="#news" onClick="SetPage('News',this)">News</a></li>
-        <li><a href="#contact" onClick="SetPage('Contact',this)">Contact</a></li>
-        <li style="float:right;"><a href="#about" onClick="SetPage('Settings',this)">Settings</a></li>
+        <li><a class="active"  onClick="SetPage('home',this)">Home</a></li>
+        <!-- <li><a href="#news" onClick="SetPage('News',this)">News</a></li>
+        <li><a href="#contact" onClick="SetPage('Contact',this)">Contact</a></li> -->
+        <li style="float:right;"><a onClick="SetPage('Settings',this)">Settings</a></li>
     </ul>
 
     <!-- </div> -->
