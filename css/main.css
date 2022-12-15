@@ -1,6 +1,9 @@
 body {
   
+  font-family: fantasy;
+
   background-color: #2a2a2a;
+  color: white;
   /* color: white; */
   align-items: center;
   /* background-color: #afd275; */
@@ -10,21 +13,38 @@ body {
   overflow: hidden;
 }
 
+.blur   {
+  filter: blur(2px);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+}
+.Dialogs{
 
 
+  background-color: #00000087;
+  border: 3px transparent solid;
+  border-radius: 10px;
+  max-width: 200px;
+  min-width: 150px;
+  position: absolute;
+  top: 0px;
+  text-align: center;
+}
 
 .BarBottem {
   
   position: fixed;
   left: 0%;
   bottom: -2%;
-  background-color: black;
+  background-color: #161616e0 ;
   color: white;
   align-items: center;
   display: flex;
   justify-content: center;
   font-size:125%;
- 
+ /* height: 5%; */
   overflow: hidden;
   width: 99%;
   padding: 10px;
@@ -33,19 +53,54 @@ body {
   border-top-left-radius: 25px;
 
   border-top-right-radius: 25px;
+  box-shadow: -7px -7px 10px rgba(63, 63, 63, 0.701);
 }
 
 .BarBottem li {
+ margin: 2px;
+  text-align: center;
+  /* width: 5%; */
+  padding: 15px;
   display: inline;
-  justify-content: center;
+  /* justify-content: center; */
   height: 100%;
   padding: 3px;
 
-  
+}
+
+.BarBottem li a{
+  /* padding: 10px; */
+  border-radius: 50px;
+  border: transparent 1px dotted;
+
 }
 
 li.selected {
 
   color: green;
 
+}
+.btn{
+  /* text-align: center; */
+  width: fit-content;
+  padding: 25px;
+  aspect-ratio: 16/9;
+
+   /* background-color:#2a2a2a; */
+   color: #ffffff;
+   background: #2a2a2a;
+   box-shadow:  2.5px 2.5px 10px #111111,
+                -2.5px -2.5px 10px #434343;
+/* border-radius: 9999px; */
+}
+.btn:hover
+/* .btn.selected */
+{
+  border: #5b5b5be0 1px solid;
+
+  /* box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.8) inset,5px 5px 10px rgba(0, 0, 0, 0.25) inset ; */
+  box-shadow:  2.5px 2.5px 10px #111111,
+  -2.5px -2.5px 10px #434343;
+
+/* border-radius: 9999px; */
 }

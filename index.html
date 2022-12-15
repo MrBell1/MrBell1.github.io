@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,27 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
     <script defer src="js/main.js"></script>
+    <script defer src="js/dialogs.js"></script>
+
 </head>
+
 <body>
 
-    <div>Welcome</div>
+    <div id="MainContainer">
+        <div class="btn selected">
+            <h4>Welcome</h4>
+        </div>
 
-    
-    <ul class="BarBottem">
 
-      <li class="selected" onClick="SetPage('home',this)"><a>Home</a></li>
-      <!-- <li onClick="SetPage('spotify',this)"><a>Spotify</a></a></li>
+        <ul class="BarBottem">
+
+            <li class="selected" onClick="SetPage('home',this)"><a>Home</a></li>
+            <!-- <li onClick="SetPage('spotify',this)"><a>Spotify</a></a></li>
         <li onClick="SetPage('tuya',this)"><a>Tuya</a></a></li>
       <li onClick="SetPage('settings',this)"><a>Settings</a></a></li> -->
 
-    </ul>
+        </ul>
+    </div>
 </body>
+
 </html>
