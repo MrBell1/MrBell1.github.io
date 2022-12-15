@@ -1,5 +1,5 @@
 git add --all
 
-git commit -a -m "Send"
+git commit -a -m "Publish"
 
-git push -u origin main
+git push --all
