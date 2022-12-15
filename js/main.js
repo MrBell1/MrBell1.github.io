@@ -1,26 +1,13 @@
-// alert(new Date())
 
-var btnState = {
 
-    // 'btn1':false
+function SetPage(page,ele){
+
+   var collection =  document.getElementsByClassName("BarBottem")[0].children;
+    for (let i = 0; i < collection.length; i++) {
+  var tEle = collection[i]
+  tEle.className =""
 }
+ele.className ="selected"
 
-
-document.getElementById("btn1").addEventListener('click',function(){
-
-
-if(btnState[this.id] == false){
-
-    alert(this.id)
-}else{
-
-if (btnState[this.id] == true) {
-    
-} else {
-    btnState[this.id] = false
-}
 
 }
-
-
-})

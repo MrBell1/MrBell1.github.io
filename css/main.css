@@ -1,21 +1,38 @@
 body {
+  
   background-color: #2a2a2a;
-  color: white;
-
+  /* color: white; */
+  align-items: center;
+  /* background-color: #afd275; */
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
 }
 
+
+
+
 .BarBottem {
-  text-align: center;
+  
   position: fixed;
   left: 0%;
-  bottom: 0%;
+  bottom: -2%;
   background-color: black;
   color: white;
-  width: 100%;
-  height: 5.5%;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size:125%;
+ 
+  overflow: hidden;
+  width: 99%;
+  padding: 10px;
+ 
+
+  border-top-left-radius: 25px;
+
+  border-top-right-radius: 25px;
 }
 
 .BarBottem li {
@@ -23,6 +40,8 @@ body {
   justify-content: center;
   height: 100%;
   padding: 3px;
+
+  
 }
 
 li.selected {
