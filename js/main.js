@@ -16,6 +16,7 @@ socket.onmessage = function(event) {
     if (MyID == null) 
     {
       MyID = TempData.split(":")[1]
+      console.log("MyID: " + MyID)
     }
   }
 };
