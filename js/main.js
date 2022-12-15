@@ -15,6 +15,6 @@ function SetPage(page, ele) {
     // }
   }
   ele.className = "active"
-
+  navigator.vibrate([100,30,100,30,100,30,200,30,200,30,200,30,100,30,100,30,100]); // Vibrate 'SOS' in 
 
 }
