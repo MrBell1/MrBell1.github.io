@@ -1,4 +1,6 @@
 var MyID = null
+try {
+  
 let socket = new WebSocket("ws://10.1.1.239:8000");
 socket.onopen = function(e) {
   // alert("[open] Connection established");
@@ -36,6 +38,9 @@ socket.onerror = function(error) {
   // alert(`[error]`);
   // setTimeout(function(){socket = new WebSocket("ws://10.1.1.239:8000")},1000)
 };
+} catch (error) {
+  
+}
 
 function currentTime() {
   let date = new Date(); 
