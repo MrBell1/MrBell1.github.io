@@ -1,3 +1,40 @@
+var MyID = null
+let socket = new WebSocket("ws://10.1.1.239:8000");
+socket.onopen = function(e) {
+  // alert("[open] Connection established");
+  // alert("Sending to server");
+  socket.send("GetID");
+};
+
+socket.onmessage = function(event) {
+  // alert(`[message] Data received from server: ${event.data}`);
+  var TempData =event.data
+  // // t = JSON.parse(t)
+  // console.log(t)
+  if(TempData.includes("SetID")){
+    // alert(TempData)
+    if (MyID == null) 
+    {
+      MyID = TempData.split(":")[1]
+    }
+  }
+};
+
+socket.onclose = function(event) {
+  setTimeout(function(){socket = new WebSocket("ws://10.1.1.239:8000")},1000)
+  if (event.wasClean) {
+    // alert(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
+  } else {
+    // e.g. server process killed or network down
+    // event.code is usually 1006 in this case
+    // alert('[close] Connection died');
+  }
+};
+
+socket.onerror = function(error) {
+  // alert(`[error]`);
+  // setTimeout(function(){socket = new WebSocket("ws://10.1.1.239:8000")},1000)
+};
 
 function currentTime() {
   let date = new Date(); 
