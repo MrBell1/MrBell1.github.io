@@ -1,13 +1,31 @@
-*{
 
-    background-color: rgb(53, 53, 53);
-    text-align: center;
-  }
-  .mainBtn{
-    border: 1px transparent solid;
-    /* border-radius:25%; */
-    text-align: center;
-    width: 5%;
-    aspect-ratio: 16/9;
-    background-color:  rgb(135, 135, 135);;
-  }
+
+body {
+  align-items: center;
+  background-color: #434343;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.mainBtn {
+  padding: 1%;
+  align-items: center;
+  background-color: #afd275;
+  box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+  border-radius: 5%;
+  display: flex;
+width: fit-content;
+aspect-ratio: 16/9;
+}
+.mainBtn.checked {
+  box-shadow: 
+  12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+  -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: 
+  12px 12px 16px 0 rgba(255, 255, 255, 0.3) inset,
+  -8px -8px 12px 0 rgba(0, 0, 0, .25) inset;
+
+}

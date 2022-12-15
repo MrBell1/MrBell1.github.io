@@ -1,5 +1,5 @@
 git add --all
 
-git commit -m "Initial commit"
+git commit -a -m "Send"
 
 git push -u origin main
