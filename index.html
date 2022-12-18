@@ -7,22 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script defer src="js/main.js"></script>
     <script defer src="js/dialogs.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <script defer src="js/firebase.js"></script>
+
     </script>
     <script>
-        // // Add "https://ipinfo.io" statement
-        // // this will communicate with the ipify servers
-        // // in order to retrieve the IP address
-        // $.get("https://ipinfo.io", function (response) {
-        //     alert(response.ip);
-        // }, "json")
-
-        // "json" shows that data will be fetched in json format
-     // Setting text of element P with id gfg
-    // $("#gfg").html(data.ip);
-
     </script>
 </head>
 
@@ -43,31 +36,14 @@
             </h4> 
         </div>
     </div>
-    <!-- <div id="MainContainer"> -->
-    <!-- <div class="btn selected">
-            <h4>Welcome</h4>
-        </div> -->
-
-
-    <!-- <ul class="BarBottem">
-
-            <li class="selected" onClick="SetPage('home',this)"><a>Home</a></li>    
-            <li onClick="SetPage('spotify',this)"><a>Spotify</a></a></li>
-        <li onClick="SetPage('tuya',this)"><a>Tuya</a></a></li>
-      <li onClick="SetPage('settings',this)"><a>Settings</a></a></li>
-
-        </ul> -->
+   
 
 <div class="Clock"></div>
 <div class="Date"></div>
     <ul class="navBar">
         <li><a class="active"  onClick="SetPage('home',this)">Home</a></li>
-        <!-- <li><a href="#news" onClick="SetPage('News',this)">News</a></li>
-        <li><a href="#contact" onClick="SetPage('Contact',this)">Contact</a></li> -->
         <li style="float:right;"><a onClick="SetPage('Settings',this)">Settings</a></li>
     </ul>
-
-    <!-- </div> -->
 </body>
 
 </html>
