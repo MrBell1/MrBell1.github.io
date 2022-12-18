@@ -34,6 +34,7 @@ function get() {
 
         let html = '<h4>Welcome '+ data.Name.F +'<br></h4>'
         document.getElementById('homePage').innerHTML = html//JSON.stringify(data)
+        
         console.log(JSON.stringify(data.Name)) //updateStarCount(postElement, data); 
     });
 }
