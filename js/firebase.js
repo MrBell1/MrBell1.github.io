@@ -38,4 +38,4 @@ function get() {
         console.log(JSON.stringify(data.Name)) //updateStarCount(postElement, data); 
     });
 }
-get()
+// get()
