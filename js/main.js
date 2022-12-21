@@ -1,7 +1,9 @@
 var MyID = null;
 var JobList;
 let time;
+var TempSecs = null
 let PageTitle = "Home";
+var Amt = 5;
 function currentTime(Send, NewDate) {
 
   let date = new Date();
@@ -13,6 +15,10 @@ function currentTime(Send, NewDate) {
   let hh = date.getHours();
   let mm = date.getMinutes();
   let ss = date.getSeconds();
+  // TempSecs = ss;
+  if (TempSecs == null) {
+    TempSecs = ss;
+  }
   let session = "AM";
 
   if (hh == 0) {
@@ -38,6 +44,20 @@ function currentTime(Send, NewDate) {
   if (Send) {
     return time
   } else {
+    if ((TempSecs + Amt)>=60) {
+      
+      // TempSecs = TempSecs - ss
+
+      TempSecs = 60 - TempSecs
+    } else {
+      if ((TempSecs + Amt) == ss) {
+
+        SlideShow()
+        TempSecs = ss;
+      } else {
+        console.log((TempSecs + Amt) + "--" + ss)
+      }
+    }
     doJobs()
   }
 
@@ -91,9 +111,9 @@ function doJobs() {
           // console.log(currentTime(true, TempDate))
           if (currentTime(true, TempDate) == ele.DoAt.dateORtime) {
             if (ele.done == false) {
-            
-                 eval(ele.func)
-   
+
+              eval(ele.func)
+
 
               // JobList[arrayPos].done = true
               JobList[arrayPos].DoAt.dateORtime = TempNewDate

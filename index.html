@@ -14,17 +14,22 @@
     <script defer src="js/dialogs.js"></script>
     <script defer src="js/firebase.js"></script>
     <script defer src="js/jobs.js"></script>
+    <script defer src="js/photos.js"></script>
     </script>
     <script>
     </script>
 </head>
 
 <body>
+
     <div class="pageHolder">
         <div id='homePage' class="CurrentPage">
-           
+            <div id="SlideShowELE">
+                <!-- <img id="SlideShowELE" src="" height="50%" style="aspect-ratio: 16/9;"> -->
+            </div>
         </div>
-        <div id='SettingsPage' class="">
+
+        <div id='SettingsPage' class="NotCurrentPage">
             <h4>Welcome Sir<br>
                 <p>
                     Settings
@@ -32,12 +37,12 @@
             </h4> 
         </div>
     </div>
-   
 
-<div class="Clock"></div>
-<div class="Date"></div>
+
+    <div class="Clock"></div>
+    <div class="Date"></div>
     <ul class="navBar">
-        <li><a class="active"  onClick="SetPage('home',this)">Home</a></li>
+        <li><a class="active" onClick="SetPage('home',this)">Home</a></li>
         <li style="float:right;"><a onClick="SetPage('Settings',this)">Settings</a></li>
     </ul>
 </body>

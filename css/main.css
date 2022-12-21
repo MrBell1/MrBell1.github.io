@@ -2,8 +2,8 @@ body {
   
   display: flex;
   justify-content: center;
-  font-family: fantasy;
-  
+  font-family: Roboto;
+  color: darkgray;
   height: 94.5vh;
 }
 html{
@@ -53,7 +53,7 @@ html{
 
 .navBar li a {
   display: block;
-  color: white;
+  /* color: white; */
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -75,7 +75,7 @@ html{
   aspect-ratio: 16/9;
 
    /* background-color:#2a2a2a; */
-   color: #ffffff;
+   /* color: #ffffff; */
    background: #2a2a2a;
    box-shadow:  2.5px 2.5px 10px #111111,
                 -2.5px -2.5px 10px #434343;
@@ -94,6 +94,13 @@ html{
 }
 
 .pageHolder div{
+
+  text-align: center;
+  position: relative;
+  top: 5%;
+}
+
+.pageHolder .NotCurrentPage{
 
   display: none;
   width: 100%;
@@ -125,6 +132,16 @@ display: block;
   border-radius: 15px;
   background-color: #3b3b3b; */
 
+}
+#SlideShowELE{
+
+  text-align: center;
+  /* transform: translateX(50%); */
+}
+#SlideShowELE img{
+  transform: translateX(50%);
+aspect-ratio: 16/9;
+  width: 50%;
 }
 .Date{
   text-align: center;
