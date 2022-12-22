@@ -45,7 +45,7 @@ function currentTime(Send, NewDate) {
     return time
   } else {
     
-    doJobs()
+    // doJobs()
   }
 
 }
@@ -73,95 +73,96 @@ function SetPage(page, ele) {
   // navigator.vibrate([100,30,100,30,100,30,200,30,200,30,200,30,100,30,100,30,100]); // Vibrate 'SOS' in 
 
 }
-function doJobs() {
+
+// function doJobs() {
 
 
-  if (JobList != null) {
-    for (let arrayPos = 0; arrayPos < JobList.length; arrayPos++) {
-      let ele = JobList[arrayPos];
-      // eval(ele.func);
-      // console.log(ele)
+//   if (JobList != null) {
+//     for (let arrayPos = 0; arrayPos < JobList.length; arrayPos++) {
+//       let ele = JobList[arrayPos];
+//       // eval(ele.func);
+//       // console.log(ele)
 
-      // eval(ele.func);
-      if (ele.DoAt.doType == "time") {
-        if (ele.DoAt.add.type == "min") {
-          var TempDate = new Date();
-          var TempNewDate
-          if (TempDate.getMinutes() == 59) {
-            TempNewDate = currentTime(true, new Date(TempDate.getFullYear(), TempDate.getMonth(), TempDate.getDate(), TempDate.getHours() + 1, 0, 0));
+//       // eval(ele.func);
+//       if (ele.DoAt.doType == "time") {
+//         if (ele.DoAt.add.type == "min") {
+//           var TempDate = new Date();
+//           var TempNewDate
+//           if (TempDate.getMinutes() == 59) {
+//             TempNewDate = currentTime(true, new Date(TempDate.getFullYear(), TempDate.getMonth(), TempDate.getDate(), TempDate.getHours() + 1, 0, 0));
 
-          } else {
-            TempNewDate = currentTime(true, new Date(TempDate.getFullYear(), TempDate.getMonth(), TempDate.getDate(), TempDate.getHours(), TempDate.getMinutes() + ele.DoAt.add.amt, 0));
+//           } else {
+//             TempNewDate = currentTime(true, new Date(TempDate.getFullYear(), TempDate.getMonth(), TempDate.getDate(), TempDate.getHours(), TempDate.getMinutes() + ele.DoAt.add.amt, 0));
 
-          }
-          // console.log(TempNewDate)
-          // console.log(currentTime(true, TempDate))
-          if (currentTime(true, TempDate) == ele.DoAt.dateORtime) {
-            if (ele.done == false) {
+//           }
+//           // console.log(TempNewDate)
+//           // console.log(currentTime(true, TempDate))
+//           if (currentTime(true, TempDate) == ele.DoAt.dateORtime) {
+//             if (ele.done == false) {
 
-              eval(ele.func)
-
-
-              // JobList[arrayPos].done = true
-              JobList[arrayPos].DoAt.dateORtime = TempNewDate
-            } else {
-              // JobList[arrayPos].done = false
-            }
-
-          } else if (ele.DoAt.dateORtime == null) {
-
-            JobList[arrayPos].DoAt.dateORtime = TempNewDate
-
-          } else {
-
-          }
-        }
-      }
-
-      // JobList[arrayPos]
-
-    }
-  }
-
-}
-function GetJobs(params) {
-
-  fetch('./js/jobs.json', {
-    method: 'GET',
-    headers: {
-      'Accept': 'application/json',
-    },
-  })
-    .then(response => response.json())
-    .then(response => JobList = response)
-  setTimeout(() => {
-    for (let arrayPos = 0; arrayPos < JobList.length; arrayPos++) {
-      let ele = JobList[arrayPos];
-      // eval(ele.func);
-      // console.log(ele)
-      if (ele.DoAt.doOnStart) {
-        // eval(ele.func);
-        if (ele.DoAt.add.type == "min") {
-          var TempDate = new Date();
-          var TempNewDate = currentTime(true)
-          // if (TempDate.getMinutes() == 59) {
-          //   TempNewDate = new Date(TempDate.getFullYear(), TempDate.getMonth(), TempDate.getDate(), TempDate.getHours() + 1, 0, 0);
-
-          // } else {
-          //   TempNewDate = new Date(TempDate.getFullYear(), TempDate.getMonth(), TempDate.getDate(), TempDate.getHours(), TempDate.getMinutes() + ele.DoAt.add.amt, 0);
-
-          // }
-          // console.log(TempNewDate == TempDate)
-          console.log(TempNewDate)
-        }
-        // JobList[arrayPos]
-      }
-    }
-  }, 250);
+//               eval(ele.func)
 
 
+//               // JobList[arrayPos].done = true
+//               JobList[arrayPos].DoAt.dateORtime = TempNewDate
+//             } else {
+//               // JobList[arrayPos].done = false
+//             }
 
-}
-setTimeout(() => {
-  GetJobs()
-}, 500);
+//           } else if (ele.DoAt.dateORtime == null) {
+
+//             JobList[arrayPos].DoAt.dateORtime = TempNewDate
+
+//           } else {
+
+//           }
+//         }
+//       }
+
+//       // JobList[arrayPos]
+
+//     }
+//   }
+
+// }
+// function GetJobs(params) {
+
+//   fetch('./js/jobs.json', {
+//     method: 'GET',
+//     headers: {
+//       'Accept': 'application/json',
+//     },
+//   })
+//     .then(response => response.json())
+//     .then(response => JobList = response)
+//   setTimeout(() => {
+//     for (let arrayPos = 0; arrayPos < JobList.length; arrayPos++) {
+//       let ele = JobList[arrayPos];
+//       // eval(ele.func);
+//       // console.log(ele)
+//       if (ele.DoAt.doOnStart) {
+//         // eval(ele.func);
+//         if (ele.DoAt.add.type == "min") {
+//           var TempDate = new Date();
+//           var TempNewDate = currentTime(true)
+//           // if (TempDate.getMinutes() == 59) {
+//           //   TempNewDate = new Date(TempDate.getFullYear(), TempDate.getMonth(), TempDate.getDate(), TempDate.getHours() + 1, 0, 0);
+
+//           // } else {
+//           //   TempNewDate = new Date(TempDate.getFullYear(), TempDate.getMonth(), TempDate.getDate(), TempDate.getHours(), TempDate.getMinutes() + ele.DoAt.add.amt, 0);
+
+//           // }
+//           // console.log(TempNewDate == TempDate)
+//           console.log(TempNewDate)
+//         }
+//         // JobList[arrayPos]
+//       }
+//     }
+//   }, 250);
+
+
+
+// }
+// setTimeout(() => {
+//   GetJobs()
+// }, 500);
