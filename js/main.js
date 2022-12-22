@@ -44,20 +44,7 @@ function currentTime(Send, NewDate) {
   if (Send) {
     return time
   } else {
-    if ((TempSecs + Amt)>=60) {
-      
-      // TempSecs = TempSecs - ss
-
-      TempSecs = 60 - TempSecs
-    } else {
-      if ((TempSecs + Amt) == ss) {
-
-        SlideShow()
-        TempSecs = ss;
-      } else {
-        console.log((TempSecs + Amt) + "--" + ss)
-      }
-    }
+    
     doJobs()
   }
 
