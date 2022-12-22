@@ -16,6 +16,10 @@ function TuyaStart() {
                 TempEle.id = element.id + ":Basic";
                 TempEle.className = 'TuyaBasic';
                 TempEle.innerHTML = element.name + "<br>" + element.status[0].value
+                TempEle.style.border = "3px solid red"
+                if (element.status[0].value) {
+                    TempEle.style.border = "3px solid green"
+                }
                 document.getElementById("tuyaPage").appendChild(TempEle)
             }
 
@@ -75,6 +79,11 @@ function TuyaUpdate() {
             // console.log(element.category)
             if (element.category == "dj") {
                 document.getElementById(element.id + ":Basic").innerHTML = element.name + "<br>" + element.status[0].value
+                if (element.status[0].value) {
+                    document.getElementById(element.id + ":Basic").style.border = "3px solid green"
+                }else{
+                    document.getElementById(element.id + ":Basic").style.border = "3px solid red"
+                }
                 // console.log(element.name)
             }
          
