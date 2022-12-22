@@ -48,6 +48,24 @@ function currentTime(Send, NewDate) {
     // doJobs()
   }
 
+
+  try {
+    if(webSocket){
+      if (TuyaReady == true) {
+
+        setTimeout(() => {
+
+          webSocket.send(' {"From":"Temp","type":"tuya","do":"GetDevices"}')
+
+        }, 250);
+
+      }
+    }
+  } catch (error) {
+    
+  }
+
+
 }
 currentTime();
 function SetPage(page, ele) {
@@ -70,7 +88,7 @@ for (let index = 0; index < PageHolder.length; index++) {
   const element = PageHolder[index];
   var TempClassName = element.className
   // var NewClassName = 
-  console.log(element)
+  // console.log(element)
   if (element.id != (page)+"Page" ) {
     // TempClassName.replaceAll("NotCurrentPage", 'CurrentPage')
     element.className = 'NotCurrentPage'

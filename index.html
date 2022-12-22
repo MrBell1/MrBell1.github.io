@@ -13,43 +13,88 @@
     <script defer src="js/main.js"></script>
     <script defer src="js/dialogs.js"></script>
     <script defer src="js/firebase.js"></script>
-    <!-- <script defer src="js/jobs.js"></script> -->
+    <script defer src="js/tuya.js"></script>
 
- 
+
     <script>
-        var WsServer = "ws://desolate-wave-45702.herokuapp.com/";
+        // var WsServer = "ws://desolate-wave-45702.herokuapp.com/";
+        var WsServer = "ws://127.0.0.1:5000";
+
         let webSocket = new WebSocket(WsServer);
         let el;
-    
-        webSocket.onmessage = (event) => {
+        webSocket.onopen = (event) => {
 
-            var TempData = JSON.parse(event.data)
+
+            console.log("opened")
+            setTimeout(() => {
+                try {
+                    if (TuyaReady == false) {
+                        TuyaStart()
+                    }
+                } catch (error) {
+
+                }
+            }, 2000);
+
+
+        }
+        webSocket.onmessage = (event) => {
+            var TempData = event.data
+
+            try {
+                // JSON.parse(event.data)
+                TempData = JSON.parse(event.data)
+
+            } catch (error) {
+
+            }
+
             if (TempData.ping) {
                 el = document.getElementById('Ping');
-                    el.innerHTML = TempData.ping;
-          
-                // console.log(TempData)
+                el.innerHTML = TempData.ping;
+
+
+            } else {
+
+
+                if (TempData.type == "tuya") {
+                    // console.log(TempData.data)
+                    try {
+                        devices = TempData.data
+                        
+                        TuyaUpdate()
+                    } catch (error) {
+
+                    }
+                }
             }
-        //   el = document.getElementById('Ping');
-        //   el.innerHTML = JSON.stringify();
-          
+            //   el = document.getElementById('Ping');
+            //   el.innerHTML = JSON.stringify();
+
         };
-      </script>
+    </script>
 </head>
 
 <body>
 
     <div class="pageHolder">
         <div id='homePage' class="CurrentPage">
+            <h4>
+                Home
+            </h4>
         </div>
-
+        <div id='tuyaPage' class="NotCurrentPage">
+            <h4>
+                Tuya
+            </h4>
+        </div>
         <div id='SettingsPage' class="NotCurrentPage">
             <h4>Welcome Sir<br>
                 <p>
                     Settings
-                    <div id="Ping">
-            
-                    </div>
+                <div id="Ping">
+
+                </div>
                 </p> 
             </h4> 
         </div>
@@ -60,6 +105,7 @@
     <div class="Date"></div>
     <ul class="navBar">
         <li><a class="active" onClick="SetPage('home',this)">Home</a></li>
+        <li><a class="" onClick="SetPage('tuya',this)">Tuya</a></li>
         <li style="float:right;"><a onClick="SetPage('Settings',this)">Settings</a></li>
     </ul>
 </body>
