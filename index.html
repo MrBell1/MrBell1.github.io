@@ -17,8 +17,15 @@
 
 
     <script>
-        // var WsServer = "ws://desolate-wave-45702.herokuapp.com/";
-        var WsServer = "ws://127.0.0.1:5000";
+        var WsServer = ""
+        if((window.location + "").includes("127.0.0.1")){
+            console.log("Yep")
+            WsServer = "ws://127.0.0.1:5000";
+        }else{
+            WsServer = "ws://desolate-wave-45702.herokuapp.com/";
+
+        }
+      console.log(WsServer)
 
         let webSocket = new WebSocket(WsServer);
         let el;
