@@ -41,6 +41,7 @@ html{
   background-color: #333;
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   border-top-left-radius: 15px;
   
@@ -93,25 +94,22 @@ html{
 /* border-radius: 9999px; */
 }
 
-.pageHolder div{
+.pageHolder .child{
 
   text-align: center;
-  position: relative;
-  top: 5%;
+  /* position: relative; */
+  /* top: 5%; */
 }
 
 .pageHolder .NotCurrentPage{
 
   display: none;
-  width: 100%;
-  text-align: center;
 
-  padding: 5px;
-  border-radius: 15px;
 
 
 }
 .pageHolder{
+   
   background-color: transparent;
   width: 100%;
   font-size: 125%;
@@ -122,8 +120,8 @@ html{
 
   /* position: relative;
   top: 0;
-
-  text-align: center; */
+*/
+  text-align: center; 
 display: block;
 
 
@@ -133,16 +131,7 @@ display: block;
   background-color: #3b3b3b; */
 
 }
-#SlideShowELE{
 
-  text-align: center;
-  /* transform: translateX(50%); */
-}
-#SlideShowELE img{
-  transform: translateX(50%);
-aspect-ratio: 16/9;
-  width: 50%;
-}
 .Date{
   text-align: center;
   z-index: 100;

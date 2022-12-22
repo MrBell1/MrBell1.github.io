@@ -65,11 +65,28 @@ function SetPage(page, ele) {
     // }
   }
   ele.className = "active";
-  // document.getElementsByClassName("CurrentPage")[0].style.display = 'none'
-  document.getElementsByClassName("CurrentPage")[0].className = ''
-  // document.getElementById(page+"Page").style.display = "flex";
-  document.getElementById(page + "Page").className += 'CurrentPage'
+var PageHolder = document.getElementsByClassName('pageHolder')[0].children
+for (let index = 0; index < PageHolder.length; index++) {
+  const element = PageHolder[index];
+  var TempClassName = element.className
+  // var NewClassName = 
+  console.log(element)
+  if (element.id != (page)+"Page" ) {
+    // TempClassName.replaceAll("NotCurrentPage", 'CurrentPage')
+    element.className = 'NotCurrentPage'
+  }
 
+}
+document.getElementById(page + "Page").className = 'CurrentPage'
+  // // document.getElementsByClassName("CurrentPage")[0].style.display = 'none'
+  // var CurrentPage = document.getElementsByClassName("CurrentPage")[0]
+  // var NewPage = document.getElementById(page + "Page")
+  // // document.getElementsByClassName("CurrentPage")[0].className.replaceAll("CurrentPage", 'NotCurrentPage')
+  // CurrentPage.className.replaceAll("CurrentPage", 'NotCurrentPage')
+  // // document.getElementById(page+"Page").style.display = "flex";
+  // // document.getElementById(page + "Page").className.replaceAll("NotCurrentPage", 'CurrentPage')
+  // NewPage.className.replaceAll("NotCurrentPage", 'CurrentPage')
+  // console.log(NewPage)
   // navigator.vibrate([100,30,100,30,100,30,200,30,200,30,200,30,100,30,100,30,100]); // Vibrate 'SOS' in 
 
 }
