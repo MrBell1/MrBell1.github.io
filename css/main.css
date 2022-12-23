@@ -160,7 +160,8 @@ display: block;
 .TuyaBasic {
   display: inline-block;
   text-align: center;
-  border-radius: 9999px;
+  border-radius: 5%;
   width: fit-content;
+  height: 15%;
   padding: 1%;
 }
