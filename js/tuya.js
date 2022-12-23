@@ -90,10 +90,11 @@ function TuyaUpdate() {
                     TempState = "OFF"
                 }
                 // console.log(element.status.switch_led)
-                document.getElementById(element.id + ":Basic").innerHTML = element.name// + "<div onclick='SwitchLED'>" + TempState+ "</div>"
-                var TempEle = document.createElement("div")
+                document.getElementById(element.id + ":Basic").innerHTML = element.name + "<br>"// + "<div onclick='SwitchLED'>" + TempState+ "</div>"
+                var TempEle = document.createElement("button")
                 TempEle.id = element.id + ":switch"
                 TempEle.innerHTML = TempState
+                // TempEle.onclick(function(){SwitchLED(element.id)}   )
                 document.getElementById(element.id + ":Basic").appendChild(TempEle)
                 TempEle = document.getElementById(element.id + ":switch")
                 TempEle.addEventListener("click",function(){SwitchLED(element.id)})
