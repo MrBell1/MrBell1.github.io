@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/qod.css">
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- <script defer src="js/main.js"></script> -->
+      <!-- <script defer src="js/dialogs.js"></script>
+    <script defer src="js/firebase.js"></script>
+    <script defer src="js/tuya.js"></script> -->
+    <script defer src="js/twitch.js"></script>
+    <script defer src="js/focus.js"></script>
+
+<!-- 
+    <script>
+        var WsServer = ""
+        if((window.location + "").includes("5500")){
+            console.log("Yep")
+            WsServer = "ws://127.0.0.1:5000";
+        }else{
+            WsServer = "wss://desolate-wave-45702.herokuapp.com/";
+
+        }
+      console.log(WsServer)
+
+        let webSocket = new WebSocket(WsServer);
+        let el;
+        webSocket.onopen = (event) => {
+
+
+            console.log("opened")
+            setTimeout(() => {
+                try {
+                    if (TuyaReady == false) {
+                        TuyaStart()
+                    }
+                } catch (error) {
+
+                }
+            }, 2000);
+
+
+        }
+        webSocket.onmessage = (event) => {
+            var TempData = event.data
+
+            try {
+                // JSON.parse(event.data)
+                TempData = JSON.parse(event.data)
+
+            } catch (error) {
+
+            }
+
+            if (TempData.ping) {
+                el = document.getElementById('Ping');
+                el.innerHTML = TempData.ping;
+
+
+            } else {
+
+                if (TempData.type == "tuya") {
+                    // console.log(TempData.data)
+                    try {
+                        devices = TempData.data
+                        
+                        TuyaUpdate()
+                    } catch (error) {
+
+                    }
+                }
+            }
+            //   el = document.getElementById('Ping');
+            //   el.innerHTML = JSON.stringify();
+
+        }; -->
+    </script>
+</head>
+
+<body >
+    <div class="IdleHolder" style="display: flex;">
+    
+        <div class="idleBasic" id="IdleClock"></div>
+        <div id="QoD" ></div>
+    </div>
+    <script>
+
+setTimeout(() => {
+    idleAPI.init("qod")
+}, 250);
+
+    </script>
+</body>
+
+</html>

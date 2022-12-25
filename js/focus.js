@@ -35,30 +35,36 @@ let idleAPI = (function () {
         const response = await fetch(url);
         var data = await response.json();
         console.log(data);
-        document.getElementById("QoD").innerHTML = data.contents.quotes[0].quote +"<br><div id='QoDauthor'> - " +  data.contents.quotes[0].author  + "</div>"
+        document.getElementById("QoD").innerHTML = data.contents.quotes[0].quote + "<br><div id='QoDauthor'> - " + data.contents.quotes[0].author + "</div>"
         // document.getElementById("QoD").style.backgroundImage = "url(https://theysaidso.com/img/qod/qod-inspire.jpg)"
     }
 
-    
 
-    function startIdle() {
-    getapi(api_url);
+
+    function startIdle(data) {
+        getapi(api_url);
 
         lastTouch = new Date();
-        if (LoopFunc == null) {
 
 
-            document.addEventListener('click', function (params) {
-                lastTouch = new Date();
-                // console.log("yep")
 
-                document.getElementsByClassName('IdleHolder')[0].style.display = "none"
-            })
+        if (data == 'qod') {
 
-            LoopFunc = setInterval(() => {
-                checkIdleTime()
-            }, 750);
+        } else {
+            if (LoopFunc == null) {
+
+                document.addEventListener('click', function (params) {
+                    lastTouch = new Date();
+                    // console.log("yep")
+
+                    document.getElementsByClassName('IdleHolder')[0].style.display = "none"
+                })
+                LoopFunc = setInterval(() => {
+                    checkIdleTime()
+                }, 750);
+            }
         }
+
     }
 
 
@@ -67,4 +73,3 @@ let idleAPI = (function () {
         // myPublicMethod : function() { return myPrivateVar; }
     }
 })();
-idleAPI.init()
