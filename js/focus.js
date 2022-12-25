@@ -24,7 +24,7 @@ let idleAPI = (function () {
 
         } else {
             // console.log((Math.floor(diffTime / 1000)) + " Seconds");
-            console.log(Math.floor(diffTime / 1000)  + ":" + idleAMT);
+            // console.log(Math.floor(diffTime / 1000)  + ":" + idleAMT);
         }
         // console.log(diffDays + " days");
     }
