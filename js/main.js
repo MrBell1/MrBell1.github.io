@@ -36,21 +36,25 @@ function currentTime(Send, NewDate) {
   time = hh + ":" + mm + " " + session;
   var displaytime = hh + ":" + mm + ":" + ss + " " + session;
 
+  
   document.getElementsByClassName("Clock")[0].innerText = displaytime;
   document.getElementsByClassName("Date")[0].innerText = date.toDateString();
 
+  // var IdleTime = displaytime.split(":")
+
+  document.getElementById('IdleClock').innerText = hh + ":" + mm +" "+ session;
   let t = setTimeout(function () { currentTime() }, (0.5 * 1000));
 
   if (Send) {
     return time
   } else {
-    
+
     // doJobs()
   }
 
 
   try {
-    if(webSocket){
+    if (webSocket) {
       if (TuyaReady == true) {
 
         setTimeout(() => {
@@ -62,7 +66,7 @@ function currentTime(Send, NewDate) {
       }
     }
   } catch (error) {
-    
+
   }
 
 
@@ -83,19 +87,19 @@ function SetPage(page, ele) {
     // }
   }
   ele.className = "active";
-var PageHolder = document.getElementsByClassName('pageHolder')[0].children
-for (let index = 0; index < PageHolder.length; index++) {
-  const element = PageHolder[index];
-  var TempClassName = element.className
-  // var NewClassName = 
-  // console.log(element)
-  if (element.id != (page)+"Page" ) {
-    // TempClassName.replaceAll("NotCurrentPage", 'CurrentPage')
-    element.className = 'NotCurrentPage'
-  }
+  var PageHolder = document.getElementsByClassName('pageHolder')[0].children
+  for (let index = 0; index < PageHolder.length; index++) {
+    const element = PageHolder[index];
+    var TempClassName = element.className
+    // var NewClassName = 
+    // console.log(element)
+    if (element.id != (page) + "Page") {
+      // TempClassName.replaceAll("NotCurrentPage", 'CurrentPage')
+      element.className = 'NotCurrentPage'
+    }
 
-}
-document.getElementById(page + "Page").className = 'CurrentPage'
+  }
+  document.getElementById(page + "Page").className = 'CurrentPage'
   // // document.getElementsByClassName("CurrentPage")[0].style.display = 'none'
   // var CurrentPage = document.getElementsByClassName("CurrentPage")[0]
   // var NewPage = document.getElementById(page + "Page")

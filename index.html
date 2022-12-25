@@ -14,75 +14,80 @@
     <script defer src="js/dialogs.js"></script>
     <script defer src="js/firebase.js"></script>
     <script defer src="js/tuya.js"></script>
+    <script defer src="js/focus.js"></script>
 
 
     <script>
-        var WsServer = ""
-        if((window.location + "").includes("5500")){
-            console.log("Yep")
-            WsServer = "ws://127.0.0.1:5000";
-        }else{
-            WsServer = "wss://desolate-wave-45702.herokuapp.com/";
+    //     var WsServer = ""
+    //     if((window.location + "").includes("5500")){
+    //         console.log("Yep")
+    //         WsServer = "ws://127.0.0.1:5000";
+    //     }else{
+    //         WsServer = "wss://desolate-wave-45702.herokuapp.com/";
 
-        }
-      console.log(WsServer)
+    //     }
+    //   console.log(WsServer)
 
-        let webSocket = new WebSocket(WsServer);
-        let el;
-        webSocket.onopen = (event) => {
-
-
-            console.log("opened")
-            setTimeout(() => {
-                try {
-                    if (TuyaReady == false) {
-                        TuyaStart()
-                    }
-                } catch (error) {
-
-                }
-            }, 2000);
+    //     let webSocket = new WebSocket(WsServer);
+    //     let el;
+    //     webSocket.onopen = (event) => {
 
 
-        }
-        webSocket.onmessage = (event) => {
-            var TempData = event.data
+    //         console.log("opened")
+    //         setTimeout(() => {
+    //             try {
+    //                 if (TuyaReady == false) {
+    //                     TuyaStart()
+    //                 }
+    //             } catch (error) {
 
-            try {
-                // JSON.parse(event.data)
-                TempData = JSON.parse(event.data)
-
-            } catch (error) {
-
-            }
-
-            if (TempData.ping) {
-                el = document.getElementById('Ping');
-                el.innerHTML = TempData.ping;
+    //             }
+    //         }, 2000);
 
 
-            } else {
+    //     }
+    //     webSocket.onmessage = (event) => {
+    //         var TempData = event.data
 
-                if (TempData.type == "tuya") {
-                    // console.log(TempData.data)
-                    try {
-                        devices = TempData.data
+    //         try {
+    //             // JSON.parse(event.data)
+    //             TempData = JSON.parse(event.data)
+
+    //         } catch (error) {
+
+    //         }
+
+    //         if (TempData.ping) {
+    //             el = document.getElementById('Ping');
+    //             el.innerHTML = TempData.ping;
+
+
+    //         } else {
+
+    //             if (TempData.type == "tuya") {
+    //                 // console.log(TempData.data)
+    //                 try {
+    //                     devices = TempData.data
                         
-                        TuyaUpdate()
-                    } catch (error) {
+    //                     TuyaUpdate()
+    //                 } catch (error) {
 
-                    }
-                }
-            }
-            //   el = document.getElementById('Ping');
-            //   el.innerHTML = JSON.stringify();
+    //                 }
+    //             }
+    //         }
+    //         //   el = document.getElementById('Ping');
+    //         //   el.innerHTML = JSON.stringify();
 
-        };
+    //     };
     </script>
 </head>
 
 <body>
-
+    <div class="IdleHolder" style="display: none;">
+    
+        <div class="idleBasic" id="IdleClock"></div>
+        <div id="QoD" ></div>
+    </div>
     <div class="pageHolder">
         <div id='homePage' class="CurrentPage">
             <h4>
