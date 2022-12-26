@@ -48,6 +48,7 @@
         <script defer>
             var videoURL
             var myPlayer = videojs('my-video');
+            myPlayer.width(window.innerWidth / 2)
             fetch('./FBI%20-%20Season%201.json')
                 .then((response) => response.json())
                 .then((data) => setUrl(data));
@@ -56,9 +57,9 @@
             function setUrl(data) {
                 console.log(data[0])
                 videoURL = data[0]
-                myPlayer.src({ type: "application/x-mpegURL", src: videoURL[videoURL.length-1].url });
-                document.getElementById("VideoData").innerHTML = videoURL[videoURL.length-1].title
-                var TempTitle = videoURL[videoURL.length-1].title
+                myPlayer.src({ type: "application/x-mpegURL", src: videoURL[videoURL.length - 1].url });
+                document.getElementById("VideoData").innerHTML = videoURL[videoURL.length - 1].title
+                var TempTitle = videoURL[videoURL.length - 1].title
                 TempTitle = TempTitle.split("<br>")[0]
                 document.title = TempTitle
             }
@@ -80,8 +81,8 @@
                     }
                 }
                 if (CurrentVideo < videoURL.length) {
-                    myPlayer.src({ type: "application/x-mpegURL", src: videoURL[CurrentVideo+1].url });
-                    var TempTitle = videoURL[CurrentVideo+1].title
+                    myPlayer.src({ type: "application/x-mpegURL", src: videoURL[CurrentVideo + 1].url });
+                    var TempTitle = videoURL[CurrentVideo + 1].title
                     TempTitle = TempTitle.split("<br>")[0]
                     document.title = TempTitle
                 }
@@ -128,6 +129,26 @@
             //     }
             //     // myPlayer.currentTime(120)
             // }
+
+
+            let portrait = window.matchMedia("(orientation: portrait)");
+
+            portrait.addEventListener("change", function (e) {
+                try {
+                    if (e.matches) {
+                        // Portrait mode
+                        myPlayer.exitFullscreen();
+                    } else {
+                        // Landscape
+                        setTimeout(function () { myPlayer.requestFullscreen(); }, 200)
+                    }
+                } catch (error) {
+                    
+                }
+
+            })
+
+
         </script>
     </div>
 
