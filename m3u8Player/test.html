@@ -1,0 +1,134 @@
+<head>
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+    <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
+
+    <style>
+        body {
+
+            overflow: hidden;
+            height: 100%;
+            background-color: #111;
+
+            margin: 0;
+            color: darkgray;
+            text-align: center;
+
+        }
+
+        .VideoHolder {
+            z-index: -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="VideoData"></div>
+
+    <div class="VideoHolder">
+        <video id="my-video" class="video-js vjs-default-skin" controls preload="auto" data-setup="{}">
+
+            <!-- <source
+                src="https://hls2x.vidfiles.net/videos/hls/jDvXw07q-cg1BoXmSxAHCQ/1672076769/375131/20f234936b0ccfd3e57055c3c4574542/ep.0.v0.1672049355.720.m3u8"
+                type="application/x-mpegURL" />
+            <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a
+                web browser that
+                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+            </p> -->
+        </video>
+
+        <script defer>
+            var videoURL
+            var myPlayer = videojs('my-video');
+            fetch('./FBI%20-%20Season%201.json')
+                .then((response) => response.json())
+                .then((data) => setUrl(data));
+
+
+            function setUrl(data) {
+                console.log(data[0])
+                videoURL = data[0]
+                myPlayer.src({ type: "application/x-mpegURL", src: videoURL[videoURL.length-1].url });
+                document.getElementById("VideoData").innerHTML = videoURL[videoURL.length-1].title
+                var TempTitle = videoURL[videoURL.length-1].title
+                TempTitle = TempTitle.split("<br>")[0]
+                document.title = TempTitle
+            }
+
+            function NextVideo() {
+
+                var CurrentVideo = 0
+                // if (myPlayer.currentSource().src != videoURL[i]) {
+                //     myPlayer.src({ type: "application/x-mpegURL", src: videoURL[i] });
+                //     setTimeout(() => {
+                //         // myPlayer.play();
+                //     }, 1000);
+                // }
+                for (let index = 0; index < videoURL.length; index++) {
+                    const ele = videoURL[index].url;
+                    if (myPlayer.currentSource().src == ele) {
+                        CurrentVideo = index
+                        index = videoURL.length
+                    }
+                }
+                if (CurrentVideo < videoURL.length) {
+                    myPlayer.src({ type: "application/x-mpegURL", src: videoURL[CurrentVideo+1].url });
+                    var TempTitle = videoURL[CurrentVideo+1].title
+                    TempTitle = TempTitle.split("<br>")[0]
+                    document.title = TempTitle
+                }
+            }
+
+            // myPlayer.src({ type: "application/x-mpegURL", src: videoURL[0] });
+
+            // myPlayer.ready(function () {
+            //     setTimeout(() => {
+            //         // myPlayer.play();
+            //     }, 1000);
+            //     // true
+            //     // console.log(myPlayer.paused());
+            //     // // false
+            //     // console.log(!myPlayer.paused());
+
+            //     // myPlayer.play();
+            //     // // false
+            //     // console.log(myPlayer.paused());
+            //     // // true
+            //     // console.log(!myPlayer.paused());
+
+            //     // myPlayer.pause();
+            //     // // true
+            //     // console.log(myPlayer.paused());
+            //     // // false
+            //     // console.log(!myPlayer.paused());
+            // });
+
+            // function changeUrl(i) {
+
+
+
+            //     if (i == null) {
+
+            //     }
+
+            //     i = Math.floor(Math.random() * videoURL.length)
+            //     if (myPlayer.currentSource().src != videoURL[i]) {
+            //         myPlayer.src({ type: "application/x-mpegURL", src: videoURL[i] });
+            //         setTimeout(() => {
+            //             // myPlayer.play();
+            //         }, 1000);
+            //     }
+            //     // myPlayer.currentTime(120)
+            // }
+        </script>
+    </div>
+
+</body>

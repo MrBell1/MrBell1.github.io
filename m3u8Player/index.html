@@ -1,0 +1,99 @@
+<head>
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+    <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
+
+    <style>
+        body {
+
+            overflow: hidden;
+            height: 100%;
+            background-color: #111;
+
+            margin: 0;
+            color: darkgray;
+            text-align: center;
+
+        }
+
+        .VideoHolder {
+            z-index: -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="TempWidth"></div>
+
+    <div class="VideoHolder">
+        <video id="my-video" class="video-js vjs-default-skin" controls preload="auto" data-setup="{}">
+
+            <!-- <source
+                src="https://hls2x.vidfiles.net/videos/hls/jDvXw07q-cg1BoXmSxAHCQ/1672076769/375131/20f234936b0ccfd3e57055c3c4574542/ep.0.v0.1672049355.720.m3u8"
+                type="application/x-mpegURL" />
+            <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a
+                web browser that
+                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+            </p> -->
+        </video>
+
+        <script defer>
+            var videoURL = [
+                'https://hls9x.vidfiles.net/videos/hls/pxLcUHuqDcphUWXL6OxRPA/1672076467/257818/d20984340a05e550b9d71c19ecd494ab/ep.22.v0.1655297898.720.m3u8',
+                'https://hls2x.vidfiles.net/videos/hls/jDvXw07q-cg1BoXmSxAHCQ/1672076769/375131/20f234936b0ccfd3e57055c3c4574542/ep.0.v0.1672049355.720.m3u8'
+            ]
+            var myPlayer = videojs('my-video');
+
+            myPlayer.src({ type: "application/x-mpegURL", src: videoURL[0] });
+
+            myPlayer.ready(function () {
+                setTimeout(() => {
+                    // myPlayer.play();
+                }, 1000);
+                // true
+                // console.log(myPlayer.paused());
+                // // false
+                // console.log(!myPlayer.paused());
+
+                // myPlayer.play();
+                // // false
+                // console.log(myPlayer.paused());
+                // // true
+                // console.log(!myPlayer.paused());
+
+                // myPlayer.pause();
+                // // true
+                // console.log(myPlayer.paused());
+                // // false
+                // console.log(!myPlayer.paused());
+            });
+
+            function changeUrl(i) {
+
+
+
+                if (i == null) {
+
+                }
+
+                i = Math.floor(Math.random() * videoURL.length)
+                if (myPlayer.currentSource().src != videoURL[i]) {
+                    myPlayer.src({ type: "application/x-mpegURL", src: videoURL[i] });
+                    setTimeout(() => {
+                        // myPlayer.play();
+                    }, 1000);
+                }
+                // myPlayer.currentTime(120)
+            }
+        </script>
+    </div>
+
+</body>
